@@ -11,4 +11,4 @@ That is a solution to help me and my cousin plant better Lemon Hazes, nothing el
 
 ## 🏯 Architecture
 
-![Diagaram about overall K4Eden architecture.](https://github.com/chrysologo-neto/k4eden/blob/main/architecture.png?raw=true)
+![Diagaram about overall K4Eden architecture.](https://github.com/chrysologo-neto/k4eden/blob/main/docs/images/architecture.png?raw=true)
