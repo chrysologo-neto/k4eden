@@ -1,20 +1,20 @@
 // Original source code: https://wiki.keyestudio.com/KS0429_keyestudio_TDS_Meter_V1.0#Test_Code
 // Project details: https://RandomNerdTutorials.com/esp32-tds-water-quality-sensor/
-
-#define TdsSensorPin 35
-#define VREF 3.3              // analog reference voltage(Volt) of the ADC
-#define SCOUNT  30            // sum of sample point
-
-int analogBuffer[SCOUNT];     // store the analog value in the array, read from ADC
+//
+// » Variables
+//
+int analogBuffer[SCOUNT];     // Store the analog value in the array, read from ADC
 int analogBufferTemp[SCOUNT];
 int analogBufferIndex = 0;
 int copyIndex = 0;
-
 float averageVoltage = 0;
-float tdsValue = 0;
-float temperature = 25;       // current temperature for compensation
+float tds = 0;
+float temperature = 25;       // Current temperature for compensation
 
-// median filtering algorithm
+//
+// » Auxiliar Functions
+//
+// Median filtering algorithm
 int getMedianNum(int bArray[], int iFilterLen){
   int bTab[iFilterLen];
   for (byte i = 0; i<iFilterLen; i++)
@@ -38,12 +38,14 @@ int getMedianNum(int bArray[], int iFilterLen){
   return bTemp;
 }
 
-
-float read_ec_sensor(){
+//
+// » Read TDS sensor
+//
+void read_tds_CB(){
   static unsigned long analogSampleTimepoint = millis();
-  if(millis()-analogSampleTimepoint > 40U){     //every 40 milliseconds,read the analog value from the ADC
+  if(millis()-analogSampleTimepoint > 250U){     //every 40 milliseconds,read the analog value from the ADC
     analogSampleTimepoint = millis();
-    analogBuffer[analogBufferIndex] = analogRead(TdsSensorPin);    //read the analog value and store into the buffer
+    analogBuffer[analogBufferIndex] = analogRead(TDSPIN);    //read the analog value and store into the buffer
     analogBufferIndex++;
     if(analogBufferIndex == SCOUNT){ 
       analogBufferIndex = 0;
@@ -51,27 +53,29 @@ float read_ec_sensor(){
   }   
   
   static unsigned long printTimepoint = millis();
-  if(millis()-printTimepoint > 800U){
+  if(millis()-printTimepoint > 250U){
     printTimepoint = millis();
     for(copyIndex=0; copyIndex<SCOUNT; copyIndex++){
       analogBufferTemp[copyIndex] = analogBuffer[copyIndex];
       
-      // read the analog value more stable by the median filtering algorithm, and convert to voltage value
+      // Read the analog value more stable by the median filtering algorithm, and convert to voltage value
       averageVoltage = getMedianNum(analogBufferTemp,SCOUNT) * (float)VREF / 4096.0;
       
-      //temperature compensation formula: fFinalResult(25^C) = fFinalResult(current)/(1.0+0.02*(fTP-25.0)); 
-      float compensationCoefficient = 1.0+0.02*(temperature-25.0);
-      //temperature compensation
+      // Temperature compensation formula: fFinalResult(25^C) = fFinalResult(current)/(1.0+0.02*(fTP-25.0)); 
+      float compensationCoefficient = 1.0 + 0.02*(temperature-25.0);
+      // Temperature compensation
       float compensationVoltage=averageVoltage/compensationCoefficient;
       
-      //convert voltage value to tds value
-      tdsValue=(133.42*compensationVoltage*compensationVoltage*compensationVoltage - 255.86*compensationVoltage*compensationVoltage + 857.39*compensationVoltage)*0.5;
+      // Convert voltage value to tds value
+      tds = (133.42*pow(compensationVoltage,3) - 255.86*pow(compensationVoltage,2) + 857.39*compensationVoltage)*0.5;
+
+      // @TODO - Create function to organize all prints on serial output
       
-      //Serial.print("voltage:");
-      //Serial.print(averageVoltage,2);
-      //Serial.print("V   ");
-    
-      return tdsValue;
+      Serial.print("TDS:");
+      Serial.print(tds);
+      Serial.print("mg/L   ");
+
+      // @TODO - Add function to value Publish to MQTT topic      
     }
   }
 }
