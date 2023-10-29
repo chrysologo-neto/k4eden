@@ -8,12 +8,16 @@
         "env": []
     },
     {
-        "id": "d8485ee6a4fe79d0",
-        "type": "tab",
-        "label": "Light",
-        "disabled": false,
+        "id": "f016af0abc2c717c",
+        "type": "subflow",
+        "name": "Light Schedule",
         "info": "",
-        "env": []
+        "category": "",
+        "in": [],
+        "out": [],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
     },
     {
         "id": "405a4e89bc469be2",
@@ -144,9 +148,9 @@
         "className": ""
     },
     {
-        "id": "63b8b55f9cf8cd26",
+        "id": "eb9c5afec2286839",
         "type": "ui_spacer",
-        "z": "d8485ee6a4fe79d0",
+        "z": "f016af0abc2c717c",
         "name": "spacer",
         "group": "94dec1ee8da68794",
         "order": 1,
@@ -154,9 +158,9 @@
         "height": 1
     },
     {
-        "id": "3f4a3c37ac5a7dcc",
+        "id": "472a14be01698bb2",
         "type": "ui_spacer",
-        "z": "d8485ee6a4fe79d0",
+        "z": "f016af0abc2c717c",
         "name": "spacer",
         "group": "94dec1ee8da68794",
         "order": 3,
@@ -164,9 +168,9 @@
         "height": 1
     },
     {
-        "id": "7ac7f7192b180d51",
+        "id": "988095d124532444",
         "type": "ui_spacer",
-        "z": "d8485ee6a4fe79d0",
+        "z": "f016af0abc2c717c",
         "name": "spacer",
         "group": "94dec1ee8da68794",
         "order": 4,
@@ -174,9 +178,9 @@
         "height": 1
     },
     {
-        "id": "32472092f90ce931",
+        "id": "c9ca07b3a205b8f4",
         "type": "ui_spacer",
-        "z": "d8485ee6a4fe79d0",
+        "z": "f016af0abc2c717c",
         "name": "spacer",
         "group": "94dec1ee8da68794",
         "order": 8,
@@ -184,9 +188,9 @@
         "height": 1
     },
     {
-        "id": "6fd5eec2fe8f8854",
+        "id": "6969df574f3fc399",
         "type": "ui_spacer",
-        "z": "d8485ee6a4fe79d0",
+        "z": "f016af0abc2c717c",
         "name": "spacer",
         "group": "94dec1ee8da68794",
         "order": 9,
@@ -194,9 +198,9 @@
         "height": 1
     },
     {
-        "id": "e9f6e7d9088e1909",
+        "id": "916757703a7c3cc6",
         "type": "ui_spacer",
-        "z": "d8485ee6a4fe79d0",
+        "z": "f016af0abc2c717c",
         "name": "spacer",
         "group": "94dec1ee8da68794",
         "order": 12,
@@ -206,12 +210,12 @@
     {
         "id": "d74f5f016c4800f8",
         "type": "ui_numeric",
-        "z": "d8485ee6a4fe79d0",
+        "z": "f016af0abc2c717c",
         "name": "Schedule Time (h)",
         "label": "",
         "tooltip": "",
         "group": "94dec1ee8da68794",
-        "order": 6,
+        "order": 7,
         "width": 2,
         "height": 1,
         "wrap": false,
@@ -224,7 +228,7 @@
         "step": 1,
         "className": "",
         "x": 430,
-        "y": 260,
+        "y": 220,
         "wires": [
             [
                 "f7b0b098035af8a6"
@@ -234,7 +238,7 @@
     {
         "id": "fba45f824beedc8f",
         "type": "ui_dropdown",
-        "z": "d8485ee6a4fe79d0",
+        "z": "f016af0abc2c717c",
         "name": "",
         "label": "Schedule Type",
         "tooltip": "",
@@ -262,7 +266,7 @@
         "topicType": "msg",
         "className": "",
         "x": 420,
-        "y": 180,
+        "y": 140,
         "wires": [
             [
                 "f7b0b098035af8a6"
@@ -272,12 +276,12 @@
     {
         "id": "32d64b577754208b",
         "type": "ui_numeric",
-        "z": "d8485ee6a4fe79d0",
+        "z": "f016af0abc2c717c",
         "name": "Schedule Timer (min)",
         "label": "",
         "tooltip": "",
         "group": "94dec1ee8da68794",
-        "order": 7,
+        "order": 6,
         "width": 2,
         "height": 1,
         "wrap": false,
@@ -290,7 +294,7 @@
         "step": "30",
         "className": "",
         "x": 440,
-        "y": 340,
+        "y": 300,
         "wires": [
             [
                 "f7b0b098035af8a6"
@@ -300,7 +304,7 @@
     {
         "id": "623368549c30b6c7",
         "type": "ui_text",
-        "z": "d8485ee6a4fe79d0",
+        "z": "f016af0abc2c717c",
         "group": "94dec1ee8da68794",
         "order": 5,
         "width": 4,
@@ -315,13 +319,13 @@
         "fontSize": 16,
         "color": "#000000",
         "x": 410,
-        "y": 120,
+        "y": 80,
         "wires": []
     },
     {
         "id": "2a04b35084a0e5ed",
         "type": "ui_button",
-        "z": "d8485ee6a4fe79d0",
+        "z": "f016af0abc2c717c",
         "name": "\"Start\" Button Light Schedule",
         "group": "94dec1ee8da68794",
         "order": 10,
@@ -339,7 +343,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 160,
-        "y": 260,
+        "y": 220,
         "wires": [
             []
         ]
@@ -347,9 +351,9 @@
     {
         "id": "f7b0b098035af8a6",
         "type": "function",
-        "z": "d8485ee6a4fe79d0",
-        "name": "Define Schedule",
-        "func": "const payload = msg.payload\n\nnode.log(payload)\n\nconsole.log(payload)\nreturn msg;",
+        "z": "f016af0abc2c717c",
+        "name": "Build payload",
+        "func": "const payload = msg.payload\n\nnode.log(payload)\n/*\n Create function capable to build a .json with all information together (\"Starting time\" and \"Schedule Type\")\n*/\nconsole.log(payload)\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -357,34 +361,15 @@
         "finalize": "",
         "libs": [],
         "x": 690,
-        "y": 260,
+        "y": 220,
         "wires": [
-            [
-                "5ff34c44f7a2b1c2"
-            ]
+            []
         ]
-    },
-    {
-        "id": "5ff34c44f7a2b1c2",
-        "type": "debug",
-        "z": "d8485ee6a4fe79d0",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 860,
-        "y": 340,
-        "wires": []
     },
     {
         "id": "8209fa1c6254f99d",
         "type": "ui_button",
-        "z": "d8485ee6a4fe79d0",
+        "z": "f016af0abc2c717c",
         "name": "\"Stop\" Button Light Schedule",
         "group": "94dec1ee8da68794",
         "order": 11,
@@ -402,9 +387,18 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 160,
-        "y": 300,
+        "y": 260,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "8db34fa0d7eb839d",
+        "type": "subflow:f016af0abc2c717c",
+        "z": "a0ced4ca32ce1212",
+        "name": "",
+        "x": 520,
+        "y": 160,
+        "wires": []
     }
 ]

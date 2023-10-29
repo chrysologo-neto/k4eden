@@ -148,6 +148,66 @@
         "className": ""
     },
     {
+        "id": "ae0357eaace56e14",
+        "type": "ui_spacer",
+        "z": "f016af0abc2c717c",
+        "name": "spacer",
+        "group": "94dec1ee8da68794",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "4c1a4aed1e2f5780",
+        "type": "ui_spacer",
+        "z": "f016af0abc2c717c",
+        "name": "spacer",
+        "group": "94dec1ee8da68794",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "159e859169620ea3",
+        "type": "ui_spacer",
+        "z": "f016af0abc2c717c",
+        "name": "spacer",
+        "group": "94dec1ee8da68794",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "0c63eeabe51aa8f4",
+        "type": "ui_spacer",
+        "z": "f016af0abc2c717c",
+        "name": "spacer",
+        "group": "94dec1ee8da68794",
+        "order": 8,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "3fbb438b65615325",
+        "type": "ui_spacer",
+        "z": "f016af0abc2c717c",
+        "name": "spacer",
+        "group": "94dec1ee8da68794",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "f4859892ccb6e682",
+        "type": "ui_spacer",
+        "z": "f016af0abc2c717c",
+        "name": "spacer",
+        "group": "94dec1ee8da68794",
+        "order": 12,
+        "width": 1,
+        "height": 1
+    },
+    {
         "id": "d74f5f016c4800f8",
         "type": "ui_numeric",
         "z": "f016af0abc2c717c",
@@ -303,27 +363,8 @@
         "x": 690,
         "y": 220,
         "wires": [
-            [
-                "5ff34c44f7a2b1c2"
-            ]
+            []
         ]
-    },
-    {
-        "id": "5ff34c44f7a2b1c2",
-        "type": "debug",
-        "z": "f016af0abc2c717c",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 860,
-        "y": 300,
-        "wires": []
     },
     {
         "id": "8209fa1c6254f99d",
