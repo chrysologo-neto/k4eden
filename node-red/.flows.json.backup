@@ -20,16 +20,6 @@
         "color": "#DDAA99"
     },
     {
-        "id": "405a4e89bc469be2",
-        "type": "ui_group",
-        "name": "Basic",
-        "tab": "",
-        "disp": true,
-        "width": "6",
-        "collapse": true,
-        "className": ""
-    },
-    {
         "id": "115412912ad670f3",
         "type": "ui_base",
         "theme": {
@@ -141,14 +131,25 @@
         "type": "ui_group",
         "name": "Light Schedule",
         "tab": "b36e378c8fc61d15",
-        "order": 1,
+        "order": 2,
         "disp": true,
         "width": "10",
         "collapse": false,
         "className": ""
     },
     {
-        "id": "eb9c5afec2286839",
+        "id": "f2b05ae00f1e6cbb",
+        "type": "ui_group",
+        "name": "Control",
+        "tab": "b36e378c8fc61d15",
+        "order": 1,
+        "disp": false,
+        "width": "1",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "95ea0e7f0f0a2052",
         "type": "ui_spacer",
         "z": "f016af0abc2c717c",
         "name": "spacer",
@@ -158,7 +159,7 @@
         "height": 1
     },
     {
-        "id": "472a14be01698bb2",
+        "id": "aeb60a16d5f039fd",
         "type": "ui_spacer",
         "z": "f016af0abc2c717c",
         "name": "spacer",
@@ -168,7 +169,7 @@
         "height": 1
     },
     {
-        "id": "988095d124532444",
+        "id": "8d0f154b138f10fc",
         "type": "ui_spacer",
         "z": "f016af0abc2c717c",
         "name": "spacer",
@@ -178,32 +179,12 @@
         "height": 1
     },
     {
-        "id": "c9ca07b3a205b8f4",
+        "id": "329e66789c31f737",
         "type": "ui_spacer",
         "z": "f016af0abc2c717c",
         "name": "spacer",
         "group": "94dec1ee8da68794",
         "order": 8,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "6969df574f3fc399",
-        "type": "ui_spacer",
-        "z": "f016af0abc2c717c",
-        "name": "spacer",
-        "group": "94dec1ee8da68794",
-        "order": 9,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "916757703a7c3cc6",
-        "type": "ui_spacer",
-        "z": "f016af0abc2c717c",
-        "name": "spacer",
-        "group": "94dec1ee8da68794",
-        "order": 12,
         "width": 1,
         "height": 1
     },
@@ -215,7 +196,7 @@
         "label": "",
         "tooltip": "",
         "group": "94dec1ee8da68794",
-        "order": 7,
+        "order": 6,
         "width": 2,
         "height": 1,
         "wrap": false,
@@ -227,8 +208,8 @@
         "max": "23",
         "step": 1,
         "className": "",
-        "x": 430,
-        "y": 220,
+        "x": 830,
+        "y": 240,
         "wires": [
             [
                 "f7b0b098035af8a6"
@@ -265,8 +246,8 @@
         "topic": "payload",
         "topicType": "msg",
         "className": "",
-        "x": 420,
-        "y": 140,
+        "x": 820,
+        "y": 160,
         "wires": [
             [
                 "f7b0b098035af8a6"
@@ -281,7 +262,7 @@
         "label": "",
         "tooltip": "",
         "group": "94dec1ee8da68794",
-        "order": 6,
+        "order": 7,
         "width": 2,
         "height": 1,
         "wrap": false,
@@ -293,8 +274,8 @@
         "max": "30",
         "step": "30",
         "className": "",
-        "x": 440,
-        "y": 300,
+        "x": 840,
+        "y": 320,
         "wires": [
             [
                 "f7b0b098035af8a6"
@@ -318,28 +299,28 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 410,
-        "y": 80,
+        "x": 810,
+        "y": 100,
         "wires": []
     },
     {
         "id": "2a04b35084a0e5ed",
         "type": "ui_button",
         "z": "f016af0abc2c717c",
-        "name": "\"Start\" Button Light Schedule",
-        "group": "94dec1ee8da68794",
-        "order": 10,
-        "width": 4,
-        "height": 1,
+        "name": "\"On\" Button Light Schedule",
+        "group": "f2b05ae00f1e6cbb",
+        "order": 1,
+        "width": 1,
+        "height": 2,
         "passthru": false,
-        "label": "Start",
+        "label": "On",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
         "className": "",
         "icon": "",
-        "payload": "",
-        "payloadType": "str",
+        "payload": "true",
+        "payloadType": "bool",
         "topic": "topic",
         "topicType": "msg",
         "x": 160,
@@ -360,8 +341,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
-        "y": 220,
+        "x": 1090,
+        "y": 240,
         "wires": [
             []
         ]
@@ -370,24 +351,49 @@
         "id": "8209fa1c6254f99d",
         "type": "ui_button",
         "z": "f016af0abc2c717c",
-        "name": "\"Stop\" Button Light Schedule",
-        "group": "94dec1ee8da68794",
-        "order": 11,
-        "width": 4,
+        "name": "\"Off\" Button Light Schedule",
+        "group": "f2b05ae00f1e6cbb",
+        "order": 2,
+        "width": 1,
         "height": 1,
         "passthru": false,
-        "label": "Stop",
+        "label": "Off",
         "tooltip": "",
         "color": "",
         "bgcolor": "#A52A2A",
         "className": "",
         "icon": "",
-        "payload": "Test",
-        "payloadType": "str",
+        "payload": "false",
+        "payloadType": "bool",
         "topic": "topic",
         "topicType": "msg",
         "x": 160,
         "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "633e6bfa989454ce",
+        "type": "change",
+        "z": "f016af0abc2c717c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 240,
         "wires": [
             []
         ]
