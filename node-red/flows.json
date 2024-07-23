@@ -8,6 +8,14 @@
         "env": []
     },
     {
+        "id": "972e7779435c0149",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "f016af0abc2c717c",
         "type": "subflow",
         "name": "Light Schedule",
@@ -149,9 +157,9 @@
         "className": ""
     },
     {
-        "id": "95ea0e7f0f0a2052",
+        "id": "9021ad7504f73711",
         "type": "ui_spacer",
-        "z": "f016af0abc2c717c",
+        "z": "a0ced4ca32ce1212",
         "name": "spacer",
         "group": "94dec1ee8da68794",
         "order": 1,
@@ -159,9 +167,9 @@
         "height": 1
     },
     {
-        "id": "aeb60a16d5f039fd",
+        "id": "247ef79d5087fa5d",
         "type": "ui_spacer",
-        "z": "f016af0abc2c717c",
+        "z": "a0ced4ca32ce1212",
         "name": "spacer",
         "group": "94dec1ee8da68794",
         "order": 3,
@@ -169,9 +177,9 @@
         "height": 1
     },
     {
-        "id": "8d0f154b138f10fc",
+        "id": "6b3be985f97bc49a",
         "type": "ui_spacer",
-        "z": "f016af0abc2c717c",
+        "z": "a0ced4ca32ce1212",
         "name": "spacer",
         "group": "94dec1ee8da68794",
         "order": 4,
@@ -179,14 +187,104 @@
         "height": 1
     },
     {
-        "id": "329e66789c31f737",
+        "id": "04af379207f70e10",
         "type": "ui_spacer",
-        "z": "f016af0abc2c717c",
+        "z": "a0ced4ca32ce1212",
         "name": "spacer",
         "group": "94dec1ee8da68794",
         "order": 8,
         "width": 1,
         "height": 1
+    },
+    {
+        "id": "2eef31663b923090",
+        "type": "ui_spacer",
+        "z": "a0ced4ca32ce1212",
+        "name": "spacer",
+        "group": "94dec1ee8da68794",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "95503218b54038a6",
+        "type": "ui_spacer",
+        "z": "a0ced4ca32ce1212",
+        "name": "spacer",
+        "group": "94dec1ee8da68794",
+        "order": 11,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "c7b8220e0e9f2ccd",
+        "type": "mqtt-broker",
+        "name": "MQTT Client on NodeRed.local",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "693ee85f.c34638",
+        "type": "mqtt-broker",
+        "name": "Local broker",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "techexplorations/esp32/test",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "94c7afb4.27d2f",
+        "type": "ui_group",
+        "name": "DHT22 readings",
+        "tab": "e33ae4c2.84fe78",
+        "order": 1,
+        "disp": true,
+        "width": 11,
+        "collapse": false
+    },
+    {
+        "id": "e33ae4c2.84fe78",
+        "type": "ui_tab",
+        "name": "DHT22",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
     },
     {
         "id": "d74f5f016c4800f8",
@@ -199,7 +297,7 @@
         "order": 6,
         "width": 2,
         "height": 1,
-        "wrap": false,
+        "wrap": true,
         "passthru": true,
         "topic": "topic",
         "topicType": "msg",
@@ -292,7 +390,7 @@
         "height": 1,
         "name": "",
         "label": "Starting time",
-        "format": "{{msg.payload}}",
+        "format": "",
         "layout": "row-spread",
         "className": "",
         "style": false,
@@ -319,16 +417,15 @@
         "bgcolor": "",
         "className": "",
         "icon": "",
-        "payload": "true",
+        "payload": "false",
         "payloadType": "bool",
         "topic": "topic",
         "topicType": "msg",
-        "x": 160,
-        "y": 220,
+        "x": 240,
+        "y": 120,
         "wires": [
             [
-                "64d8e2ffdf615cb0",
-                "c3de897385f44028"
+                "64d8e2ffdf615cb0"
             ]
         ]
     },
@@ -358,7 +455,7 @@
         "group": "f2b05ae00f1e6cbb",
         "order": 2,
         "width": 1,
-        "height": 1,
+        "height": 2,
         "passthru": false,
         "label": "Off",
         "tooltip": "",
@@ -366,54 +463,16 @@
         "bgcolor": "#A52A2A",
         "className": "",
         "icon": "",
-        "payload": "false",
+        "payload": "true",
         "payloadType": "bool",
         "topic": "topic",
         "topicType": "msg",
-        "x": 160,
-        "y": 260,
+        "x": 240,
+        "y": 220,
         "wires": [
             [
-                "64d8e2ffdf615cb0",
-                "c3de897385f44028"
+                "64d8e2ffdf615cb0"
             ]
-        ]
-    },
-    {
-        "id": "64d8e2ffdf615cb0",
-        "type": "change",
-        "z": "f016af0abc2c717c",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "enabled",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 520,
-        "y": 200,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "79cab6a9da6369a1",
-        "type": "ui_ui_control",
-        "z": "f016af0abc2c717c",
-        "name": "",
-        "events": "all",
-        "x": 560,
-        "y": 440,
-        "wires": [
-            []
         ]
     },
     {
@@ -421,13 +480,13 @@
         "type": "ui_text",
         "z": "f016af0abc2c717c",
         "group": "94dec1ee8da68794",
-        "order": 5,
+        "order": 10,
         "width": 4,
         "height": 1,
         "name": "",
         "label": "Status",
         "format": "{{msg.payload}}",
-        "layout": "row-left",
+        "layout": "row-spread",
         "className": "",
         "style": false,
         "font": "",
@@ -438,10 +497,10 @@
         "wires": []
     },
     {
-        "id": "c3de897385f44028",
+        "id": "64d8e2ffdf615cb0",
         "type": "change",
         "z": "f016af0abc2c717c",
-        "name": "",
+        "name": "Enable/Disable Light Schedule inputs",
         "rules": [
             {
                 "t": "set",
@@ -456,10 +515,44 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 520,
-        "y": 280,
+        "x": 550,
+        "y": 180,
         "wires": [
-            []
+            [
+                "fba45f824beedc8f",
+                "623368549c30b6c7",
+                "d74f5f016c4800f8",
+                "32d64b577754208b",
+                "c097714d59bfbd3b"
+            ]
+        ],
+        "info": "- Light Schedule \"On\": Disable all inputs\n- Light Schedule \"Off\": Enable all inputs to receive new routine"
+    },
+    {
+        "id": "c097714d59bfbd3b",
+        "type": "change",
+        "z": "f016af0abc2c717c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 320,
+        "wires": [
+            [
+                "7e9766cebe3dbc71"
+            ]
         ]
     },
     {
@@ -467,8 +560,93 @@
         "type": "subflow:f016af0abc2c717c",
         "z": "a0ced4ca32ce1212",
         "name": "",
-        "x": 520,
+        "x": 740,
         "y": 160,
+        "wires": []
+    },
+    {
+        "id": "bd1f0c9fa97b27c8",
+        "type": "mqtt in",
+        "z": "a0ced4ca32ce1212",
+        "name": "MQTT In",
+        "topic": "hydroroot/test",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "c7b8220e0e9f2ccd",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 380,
+        "y": 400,
+        "wires": [
+            [
+                "bd0817fba12144b6"
+            ]
+        ]
+    },
+    {
+        "id": "bd0817fba12144b6",
+        "type": "debug",
+        "z": "a0ced4ca32ce1212",
+        "name": "MQTT message object",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "8f1df12c508183ac",
+        "type": "inject",
+        "z": "a0ced4ca32ce1212",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 380,
+        "y": 500,
+        "wires": [
+            [
+                "2bd84abe43ede9c4"
+            ]
+        ]
+    },
+    {
+        "id": "2bd84abe43ede9c4",
+        "type": "mqtt out",
+        "z": "a0ced4ca32ce1212",
+        "name": "MQTT Out",
+        "topic": "hydroroot/test",
+        "qos": "1",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "c7b8220e0e9f2ccd",
+        "x": 630,
+        "y": 500,
         "wires": []
     }
 ]
